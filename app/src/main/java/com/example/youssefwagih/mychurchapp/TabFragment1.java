@@ -5,6 +5,7 @@ package com.example.youssefwagih.mychurchapp;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -43,8 +45,19 @@ public class TabFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.tab_fragment_1, container, false);
         context = getActivity().getApplicationContext();
-        feedListView = (ListView) view.findViewById(R.id.feedsLV);
         feedsList = new ArrayList<>();
+        feedListView = (ListView) view.findViewById(R.id.feedsLV);
+        feedListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HashMap<String, String> selectedNewsItem = new HashMap<>();
+                selectedNewsItem = feedsList.get(position);
+                Intent intent = new Intent(context, FeedDetailsActivity.class);
+                intent.putExtra("Nid", selectedNewsItem.get("Nid"));
+                startActivity(intent);
+            }
+        });
+
 
         new GetNews().execute();
 

@@ -27,6 +27,16 @@ public class CustomFeedsListAdapter extends ArrayAdapter<HashMap<String,String>>
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return (position % 2) ;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View v = convertView;
@@ -34,20 +44,28 @@ public class CustomFeedsListAdapter extends ArrayAdapter<HashMap<String,String>>
         if (v == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.list_item, null);
+            if (getItemViewType(position) == 1) {
+                v = vi.inflate(R.layout.list_item1, null);
+/*                // List item connected with service data
+                v = vi.inflate(R.layout.list_item, null);
+                HashMap<String, String> newsDetails = getItem(position);
+                TextView newsTitleTV = (TextView) v.findViewById(R.id.newsTitleTV);
+                ImageView newsIV = (ImageView) v.findViewById(R.id.newsImageView);
+                TextView numOfViewsTV = (TextView) v.findViewById(R.id.numOfViewsTV);
+                TextView likesTV = (TextView) v.findViewById(R.id.likesTV);
+                TextView postDateTV = (TextView) v.findViewById(R.id.postDateTV);
+
+                newsTitleTV.setText(newsDetails.get("NewsTitle"));
+                numOfViewsTV.setText(newsDetails.get("NumofViews") + "views");
+                likesTV.setText("Likes(" + newsDetails.get("Likes") + ")");
+                postDateTV.setText(newsDetails.get("PostDate"));*/
+            }
+            else{
+                v = vi.inflate(R.layout.list_item2, null);
+            }
         }
 
-        HashMap<String, String> newsDetails = getItem(position);
-        TextView newsTitleTV = (TextView) v.findViewById(R.id.newsTitleTV);
-        ImageView newsIV = (ImageView) v.findViewById(R.id.newsImageView);
-        TextView numOfViewsTV = (TextView) v.findViewById(R.id.numOfViewsTV);
-        TextView likesTV = (TextView) v.findViewById(R.id.likesTV);
-        TextView postDateTV = (TextView) v.findViewById(R.id.postDateTV);
 
-        newsTitleTV.setText(newsDetails.get("NewsTitle"));
-        numOfViewsTV.setText(newsDetails.get("NumofViews") + "views");
-        likesTV.setText("Likes(" + newsDetails.get("Likes") + ")");
-        postDateTV.setText(newsDetails.get("PostDate"));
 
         return v;
     }
