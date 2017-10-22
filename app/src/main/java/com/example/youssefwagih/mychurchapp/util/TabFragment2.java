@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp;
+package com.example.youssefwagih.mychurchapp.util;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.youssefwagih.mychurchapp.R;
 
 public class TabFragment2 extends Fragment {
 

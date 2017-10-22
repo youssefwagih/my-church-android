@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp;
+package com.example.youssefwagih.mychurchapp.util;
 
 /**
  * Created by youssef.wagih on 12/21/2016.

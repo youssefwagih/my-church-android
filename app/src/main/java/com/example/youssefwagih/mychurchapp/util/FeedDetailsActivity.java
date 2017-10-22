@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp;
+package com.example.youssefwagih.mychurchapp.util;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.youssefwagih.mychurchapp.R;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedInputStream;

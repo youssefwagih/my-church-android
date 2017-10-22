@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp;
+package com.example.youssefwagih.mychurchapp.util;
 
 /**
  * Created by youssef.wagih on 12/21/2016.
@@ -16,7 +16,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.youssefwagih.mychurchapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

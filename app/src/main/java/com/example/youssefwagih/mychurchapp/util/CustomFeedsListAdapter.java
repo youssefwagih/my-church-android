@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp;
+package com.example.youssefwagih.mychurchapp.util;
 
 /**
  * Created by youssef.wagih on 12/21/2016.
@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.youssefwagih.mychurchapp.R;
+
 import java.util.HashMap;
 import java.util.List;
 
