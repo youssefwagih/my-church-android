@@ -1,8 +1,7 @@
-package com.example.youssefwagih.mychurchapp.login;
+package com.example.youssefwagih.mychurchapp.signup;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,16 +13,15 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.youssefwagih.mychurchapp.signup.SignUpActivity;
-import com.example.youssefwagih.mychurchapp.util.MainActivity;
 import com.example.youssefwagih.mychurchapp.R;
+import com.example.youssefwagih.mychurchapp.util.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity implements OnCompleteListener<AuthResult> {
+public class SignUpActivity extends AppCompatActivity implements  OnCompleteListener<AuthResult>{
     private static final String TAG = "LoginActivity" ;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -37,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
         super.onCreate(savedInstanceState);
 
         // set the view now
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -68,7 +66,11 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                String email = inputEmail.getText().toString();
+                String password = inputPassword.getText().toString();
+
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(SignUpActivity.this);
             }
         });
 
@@ -85,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
 
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -97,8 +99,6 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                     return;
                 }
 
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(LoginActivity.this);
 
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -122,28 +122,17 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
 
     @Override
     public void onComplete(@NonNull Task task) {
-        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
         // If sign in fails, display a message to the user. If sign in succeeds
         // the auth state listener will be notified and logic to handle the
         // signed in user can be handled in the listener.
         if (!task.isSuccessful()) {
-            Log.w(TAG, "signInWithEmail:failed", task.getException());
-/*                                    Toast.makeText(EmailPasswordActivity.this, R.string.auth_failed,
-                                            Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(SignUpActivity.this, R.string.auth_failed,
+                    Toast.LENGTH_SHORT).show();
         }else{
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                // Name, email address, and profile photo Url
-                String name = user.getDisplayName();
-                String email = user.getEmail();
-                Uri photoUrl = user.getPhotoUrl();
-
-                // The user's ID, unique to the Firebase project. Do NOT use this value to
-                // authenticate with your backend server, if you have one. Use
-                // FirebaseUser.getToken() instead.
-                String uid = user.getUid();
-            }
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            startActivity(intent);
         }
 
     }
