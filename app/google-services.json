@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "539246306155",
+    "firebase_url": "https://kenesty-app.firebaseio.com",
+    "project_id": "kenesty-app",
+    "storage_bucket": "kenesty-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539246306155:android:e2f6fae8c3aa0f29",
+        "android_client_info": {
+          "package_name": "com.example.youssefwagih.mychurchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539246306155-kom1aghtqc53a4ftt159h9a11f3736m6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.youssefwagih.mychurchapp",
+            "certificate_hash": "b41a31c26ff5a5eec3572dea71268f5af3d5da99"
+          }
+        },
+        {
+          "client_id": "539246306155-t2p1okqu8gsnm3c40f688lpq3enf3q81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCssYU0kspftYQXU4c3MlTv3j68A-TG2vQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539246306155-t2p1okqu8gsnm3c40f688lpq3enf3q81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
