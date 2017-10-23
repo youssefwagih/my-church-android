@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".signup.SignUpActivity" />
-        <activity android:name=".util.FeedDetailsActivity"></activity>
+        <activity android:name=".util.FeedDetailsActivity" />
+        <activity android:name=".news.view.NewsActivity"></activity>
     </application>
 
 </manifest>
