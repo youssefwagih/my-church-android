@@ -30,10 +30,10 @@ public class NewsActivity extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
+                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
+                    NewsModel value = messageSnapshot.getValue(NewsModel.class);
+                    Log.d(TAG, "Value is: " + value.getTitle() + "  " + value.getDescription());
+                }
             }
 
             @Override
@@ -49,7 +49,7 @@ public class NewsActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("news");
         NewsModel newsModel = new NewsModel("this is title 1", "this is description 1");
-        DatabaseReference newRef = myRef.child("news").push();
+        DatabaseReference newRef = myRef.push();
         newRef.setValue(newsModel);
     }
 }

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.youssefwagih.mychurchapp.news.view.NewsActivity;
 import com.example.youssefwagih.mychurchapp.signup.SignUpActivity;
 import com.example.youssefwagih.mychurchapp.util.MainActivity;
 import com.example.youssefwagih.mychurchapp.R;
@@ -84,7 +85,6 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
 
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -142,6 +142,8 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                 // authenticate with your backend server, if you have one. Use
                 // FirebaseUser.getToken() instead.
                 String uid = user.getUid();
+                startActivity(new Intent(LoginActivity.this, NewsActivity.class));
+
             }
         }
 
