@@ -19,6 +19,7 @@ import com.example.youssefwagih.mychurchapp.util.MainActivity;
 import com.example.youssefwagih.mychurchapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,10 +36,8 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // set the view now
         setContentView(R.layout.activity_login);
-
+        FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
