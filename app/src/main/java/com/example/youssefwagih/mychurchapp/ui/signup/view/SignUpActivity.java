@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.signup.view;
+package com.example.youssefwagih.mychurchapp.ui.signup.view;
 
 
 import android.os.Bundle;

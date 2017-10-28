@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.splash;
+package com.example.youssefwagih.mychurchapp.ui.splash;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.youssefwagih.mychurchapp.R;
-import com.example.youssefwagih.mychurchapp.login.LoginActivity;
+import com.example.youssefwagih.mychurchapp.ui.login.LoginActivity;
 
 public class SplashActivity extends Activity {
 

@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.news.view.view;
+package com.example.youssefwagih.mychurchapp.ui.news.view;
 
 import android.content.Context;
 import android.net.Uri;

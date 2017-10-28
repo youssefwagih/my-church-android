@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.youssefwagih.mychurchapp.R;
-import com.example.youssefwagih.mychurchapp.news.view.view.NewsListingFragment;
+import com.example.youssefwagih.mychurchapp.ui.news.view.NewsListingFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,

@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.login;
+package com.example.youssefwagih.mychurchapp.ui.login;
 
 
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.youssefwagih.mychurchapp.signup.view.SignUpActivity;
+import com.example.youssefwagih.mychurchapp.ui.signup.view.SignUpActivity;
 import com.example.youssefwagih.mychurchapp.R;
 import com.example.youssefwagih.mychurchapp.ui.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
