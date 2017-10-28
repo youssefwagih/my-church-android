@@ -11,6 +11,10 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/news" />
         <item
+            android:id="@+id/nav_radio"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/radio" />
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/logout" />

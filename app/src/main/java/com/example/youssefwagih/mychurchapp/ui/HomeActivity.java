@@ -13,10 +13,12 @@ import android.view.MenuItem;
 
 import com.example.youssefwagih.mychurchapp.R;
 import com.example.youssefwagih.mychurchapp.ui.news.view.NewsListingFragment;
+import com.example.youssefwagih.mychurchapp.ui.radio.view.RadioFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        NewsListingFragment.OnFragmentInteractionListener{
+        NewsListingFragment.OnFragmentInteractionListener,
+        RadioFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,9 @@ public class HomeActivity extends AppCompatActivity
 
         }else if (id == R.id.nav_logout){
 
+        }else if (id == R.id.nav_radio){
+            RadioFragment radioFragment = RadioFragment.newInstance("", "");
+            getSupportFragmentManager().beginTransaction().replace(R.id.flContent, radioFragment).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

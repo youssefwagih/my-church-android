@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.youssefwagih.mychurchapp.R;
+import com.example.youssefwagih.mychurchapp.ui.signup.view.SignUpFragment;
 
 public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity" ;
