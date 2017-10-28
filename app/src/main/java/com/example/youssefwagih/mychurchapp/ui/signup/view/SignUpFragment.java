@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -100,48 +101,6 @@ public class SignUpFragment extends Fragment implements OnCompleteListener<AuthR
 
 
 
-
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = inputEmail.getText().toString();
-                String password = inputPassword.getText().toString();
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(SignUpFragment.this);
-            }
-        });
-
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-            }
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = inputEmail.getText().toString();
-                final String password = inputPassword.getText().toString();
-
-                startActivity(new Intent(getContext(), MainActivity.class));
-
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-
-                progressBar.setVisibility(View.VISIBLE);
-            }
-        });
     }
 
     @Override
@@ -153,9 +112,24 @@ public class SignUpFragment extends Fragment implements OnCompleteListener<AuthR
         inputPassword = (EditText) view.findViewById(R.id.password);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         btnSignup = (Button) view.findViewById(R.id.btn_signup);
-        btnLogin = (Button) view.findViewById(R.id.btn_login);
-        btnReset = (Button) view.findViewById(R.id.btn_reset_password);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = inputEmail.getText().toString();
+                String password = inputPassword.getText().toString();
+
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(SignUpFragment.this);
+            }
+        });
     }
 
     @Override
