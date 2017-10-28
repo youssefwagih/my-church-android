@@ -1,15 +1,17 @@
-package com.example.youssefwagih.mychurchapp.news.adapters;
+package com.example.youssefwagih.mychurchapp.adpaters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.youssefwagih.mychurchapp.R;
-import com.example.youssefwagih.mychurchapp.news.models.NewsModel;
+import com.example.youssefwagih.mychurchapp.models.NewsModel;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -27,19 +29,16 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
 
     @Override
     public NewsRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item1, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_list_item, parent, false);
         view.setOnClickListener(mOnClickListener);
         return new NewsRecyclerViewAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(NewsRecyclerViewAdapter.ViewHolder holder, int position) {
-/*        NewsDetailsModel item = mDataset.get(position);
-        ImageLoader.loadImage(item.getPhoto(), R.drawable.image_list_placeholder, holder.newsImageView);
-        holder.newsTitleTextView.setText(item.getTitle());
-        holder.createdAtTextView.setText(item.getDisplayCreatedAtDateTime());
-        // holder.updatedAtTextView.setText("12 Feb 2018, 12:00 pm");
-        holder.descriptionTextView.setText(item.getDescription());*/
+        NewsModel item = mDataset.get(position);
+        holder.newsTextView.setText(item.getTitle());
+        holder.descriptionTextView.setText(item.getDescription());
     }
 
     @Override
@@ -76,14 +75,10 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-/*        @BindView(R.id.img_news)
-        ImageView newsImageView;
-        @BindView(R.id.txt_news_title)
-        TextView newsTitleTextView;
-        @BindView(R.id.txt_news_description)
+        @BindView(R.id.news_title_textview)
+        TextView newsTextView;
+        @BindView(R.id.news_description_textview)
         TextView descriptionTextView;
-        @BindView(R.id.txt_time_stamp)
-        TextView createdAtTextView;*/
 
         public ViewHolder(View itemView) {
             super(itemView);

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.example.youssefwagih.mychurchapp.R;
+import com.example.youssefwagih.mychurchapp.adpaters.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

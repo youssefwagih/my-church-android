@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.util;
+package com.example.youssefwagih.mychurchapp.adpaters;
 
 /**
  * Created by youssef.wagih on 12/21/2016.
@@ -7,6 +7,10 @@ package com.example.youssefwagih.mychurchapp.util;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.example.youssefwagih.mychurchapp.util.TabFragment1;
+import com.example.youssefwagih.mychurchapp.util.TabFragment2;
+import com.example.youssefwagih.mychurchapp.util.TabFragment3;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;

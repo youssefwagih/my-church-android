@@ -18,6 +18,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.youssefwagih.mychurchapp.R;
+import com.example.youssefwagih.mychurchapp.adpaters.CustomFeedsListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

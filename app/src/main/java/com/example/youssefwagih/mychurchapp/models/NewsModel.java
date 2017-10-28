@@ -1,4 +1,4 @@
-package com.example.youssefwagih.mychurchapp.news.models;
+package com.example.youssefwagih.mychurchapp.models;
 
 /**
  * Created by y.wagih on 10/22/2017.

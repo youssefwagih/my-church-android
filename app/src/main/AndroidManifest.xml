@@ -14,14 +14,19 @@
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".signup.SignUpActivity" />
+        <activity android:name=".signup.view.SignUpActivity" />
         <activity android:name=".util.FeedDetailsActivity" />
-        <activity android:name=".news.view.NewsActivity"></activity>
+        <activity android:name=".news.view.view.NewsActivity" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>

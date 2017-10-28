@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.youssefwagih.mychurchapp.news.view.NewsActivity">
+    tools:context="com.example.youssefwagih.mychurchapp.news.view.view.NewsActivity">
 
 </android.support.constraint.ConstraintLayout>

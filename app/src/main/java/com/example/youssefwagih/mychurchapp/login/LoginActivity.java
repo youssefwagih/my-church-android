@@ -14,10 +14,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.youssefwagih.mychurchapp.news.view.NewsActivity;
-import com.example.youssefwagih.mychurchapp.signup.SignUpActivity;
-import com.example.youssefwagih.mychurchapp.util.MainActivity;
+import com.example.youssefwagih.mychurchapp.signup.view.SignUpActivity;
 import com.example.youssefwagih.mychurchapp.R;
+import com.example.youssefwagih.mychurchapp.ui.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -142,7 +141,7 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                 // authenticate with your backend server, if you have one. Use
                 // FirebaseUser.getToken() instead.
                 String uid = user.getUid();
-                startActivity(new Intent(LoginActivity.this, NewsActivity.class));
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
             }
         }
