@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
                 //startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
             }
         });
-
+// test branch
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
